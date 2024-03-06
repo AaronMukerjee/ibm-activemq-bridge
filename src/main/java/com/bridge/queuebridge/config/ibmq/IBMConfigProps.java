@@ -7,10 +7,15 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties("ibm.mq")
+@ConfigurationProperties(prefix = "ibm.mq")
 @Data
 @FieldDefaults(level= AccessLevel.PRIVATE)
 public class IBMConfigProps {
     String host;
     String user;
+    String password;
+    String queueManager;
+    Integer port;
+    String channel;
+    Integer transportType;
 }
